@@ -24,7 +24,6 @@ compter_nombre_trajets <- function(trajet){
 }
 
 #' Compter le nombre de boucles
-#'
 #' @description Calcule le nombre de boucles de comptage uniques.
 #' @param trajet Un data.frame contenant une colonne 'Numéro de boucle'.
 #' @return Le nombre de boucles distinctes.
@@ -50,7 +49,6 @@ trouver_trajet_max <- function(trajet){
 }
 
 #' Calculer la distribution par semaine
-#'
 #' @description Groupe et additionne les trajets par jour de la semaine.
 #' @param trajet Un data.frame contenant une colonne 'Jour de la semaine'.
 #' @return Un data.frame avec le total par jour.
@@ -62,7 +60,6 @@ calcul_distribution_semaine <- function(trajet){
 }
 
 #' Tracer la distribution par semaine
-#'
 #' @description Génère un graphique en barres de la fréquentation par jour.
 #' @param trajet Un data.frame de trajets bruts.
 #' @return Un graphique ggplot.

@@ -44,3 +44,30 @@ commit/push.
 Pour chacune de ces fonctions, documentez et renseignez les dépendances en utilisant les nota
 tions Roxygen2. Soyez particulièrement attentifs à la déclaration des dépendances, si vous utilisez 
 des librairies tierces pour réaliser vos calculs.
+
+
+
+## Dépendances
+8. Dans le fichier DESCRIPTION, renseigner les dépendances nécessaires. Lancer la commande 
+devtools::check pour vérifier la bonne gestion des dépendances. Ajuster si nécessaire.
+
+## Données
+Afin de limiter la taille de notre package et de notre répertoire GitHub, nous allons intégrer 
+uniquement les trajets des vacances de Toussaint 2025.
+
+9. Télécharger le jeu de données ici, puis charger les données en utilisant la fonction 
+readr::read_delim. En utilisant la fonction use_data de la librairie usethis, ajouter le jeu 
+de données dans le package sous le nom df_velo. Assurez-vous que les données sont rendues 
+disponibles dans la librairie
+```{r}
+library(readr)
+
+# On charge le CSV 
+df_velo <- read_delim("244400404_comptages-velo-nantes-metropole.csv", delim = ";")
+```
+
+```{r}
+usethis::use_data(df_velo, overwrite = TRUE)
+```
+
+
