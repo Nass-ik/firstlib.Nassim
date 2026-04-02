@@ -74,4 +74,13 @@ usethis::use_data(df_velo, overwrite = TRUE)
 rendue disponible dans la librairie avec la commande ?df_velo
 
 
+11. Créer une nouvelle branche Git. Depuis cette branche, ajouter la fonction filtrer_trajet(), 
+qui prendra en entrée un data.frame et un vecteur de numéro de boucle. Elle renverra en 
+sortie le data.frame avec les boucles sélectionnées.
+
+Exemple d’appel valide : filtrer_trajet(trajet = df_velo, boucle = c("880", "881"))
+Une fois la fonction implémentée, récupérer les modifications sur master (ou main) via un push 
+suivi d’un merge depuis la remote sur GitHub. Penser à pull depuis master avant de poursuivre 
+vos modifications.
+
 
