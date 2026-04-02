@@ -70,4 +70,8 @@ df_velo <- read_delim("244400404_comptages-velo-nantes-metropole.csv", delim = "
 usethis::use_data(df_velo, overwrite = TRUE)
 ```
 
+10. Documentez le jeu de données comme décrit ici. Assurez-vous que la documentation soit 
+rendue disponible dans la librairie avec la commande ?df_velo
+
+
 
