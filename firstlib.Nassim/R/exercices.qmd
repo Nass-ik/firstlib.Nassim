@@ -1,0 +1,46 @@
+---
+title: "td5"
+format: html
+editor: visual
+---
+
+# Exercice 5
+L’objectif de cet exercice sera de créer un package nous permettant de fournir des outils d’analyses 
+des données de trajets vélos sur Nantes. Il consistera principalement à “packager” les fonctions 
+développées lors des exercices des sessions précédentes. Réaliser des commit régulier avec des 
+messages explicites sur vos modifications.
+
+## Initialisation
+ 1. Dans une nouvelle session R, créer un nouveau projet utilisant la fonction create_package 
+de la librairie usethis. Ce package sera appelé firstlib.<name>; vous replacerez <name> par 
+votre nom. Pourquoi n’est-il pas nécessaire d’installer explicitement usethis ?
+
+2. Dans votre projet RStudio, initialisez git et votre premier commit avec la commande use_git 
+de la librairie usethis
+```{r}
+usethis::use_git()
+```
+
+3. Configurez ensuite un nouveau projet vide sous GitHub qui s’appellera firstlib.<name>. En 
+utilisant la commande use_git_remote de la librairie usethis, configurez le lien entre votre 
+projet en local et votre répertoire distant. La commande usethis::git_remotes() doit vous 
+retourner l’url de votre répertoire comme origin.
+
+4. Dans le terminal RStudio, faites un push pour publier votre premier commit sur GitHub. Quelle 
+est le nom de la branche principale ?
+
+5. Éditez le fichier DESCRIPTION en renseignant les champs obligatoires et faites un nouveau 
+commit/push.
+
+## Fonctions
+6. Récupérez dans un script R/velo.R les fonctions préalablement implémentées lors de la partie 3 :
+• filtre_anomalie()
+• compter_nombre_trajets()
+• compter_nombre_boucle()
+• trouver_trajet_max()
+• calcul_distribution_semaine()
+• plot_distribution_semaine()
+
+Pour chacune de ces fonctions, documentez et renseignez les dépendances en utilisant les nota
+tions Roxygen2. Soyez particulièrement attentifs à la déclaration des dépendances, si vous utilisez 
+des librairies tierces pour réaliser vos calculs.
