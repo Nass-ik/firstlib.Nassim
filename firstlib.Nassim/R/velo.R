@@ -49,15 +49,24 @@ trouver_trajet_max <- function(trajet){
 }
 
 #' Calculer la distribution par semaine
+#'
 #' @description Groupe et additionne les trajets par jour de la semaine.
 #' @param trajet Un data.frame contenant une colonne 'Jour de la semaine'.
+#' @param filtre Logique (TRUE/FALSE). Si TRUE, le jeu de données est filtré des anomalies avant calcul.
 #' @return Un data.frame avec le total par jour.
 #' @importFrom dplyr count
 #' @export
-calcul_distribution_semaine <- function(trajet){
+calcul_distribution_semaine <- function(trajet, filtre = FALSE){
+  # Si le paramètre filtre est TRUE, on applique le filtre d'anomalies
+  if (filtre == TRUE) {
+    trajet <- filtre_anomalie(trajet)
+  }
+
+  # Ensuite, on fait le calcul normalement
   trajet |>
-    count(`Jour de la semaine`, wt = Total, sort = TRUE, name = "trajets")
+    dplyr::count(`Jour de la semaine`, wt = Total, sort = TRUE, name = "trajets")
 }
+
 
 #' Tracer la distribution par semaine
 #' @description Génère un graphique en barres de la fréquentation par jour.
