@@ -97,3 +97,28 @@ connaitre la couverture de test. Obtenir une couverture minimum de 50%
 14. Initiation au Test Driven Developement : Ajouter un test qui s’assure que la fonction 
 filtrer_trajet() renvoie un jeu de données non filtré si le paramètre boucle est NULL. 
 Adapter votre fonction pour que ce nouveau test passe
+
+15. Créer une vignette qui décrit les commandes à effectuer pour réaliser un filtre sur une boucle 
+puis un graphique à partir des données df_velo.
+
+
+16. Créer une documentation HTML de votre package avec build_site() de pkgdown. Explorer 
+la page crée, quels éléments de documentation retrouvez-vous ?
+
+17. Assurez-vous d’avoir votre banche à jour, et réalisez un commit/push vers le répertoire distant
+
+18. Redémarrez une nouvelle session R. En utilisant la fonction 
+remotes::install_github("<username_github>/<nom_du_repo_github>"), installez votre 
+package depuis le répertoire distant. Chargez-le en utilisant l’instruction library(). Lancer 
+la commande plot_distribution_semaine(df_velo). Cela marche-t-il comme attendu ?
+Félicitations, vous avez construit votre premier package !
+
+```{r}
+library(firstlib.Nassim)
+plot_distribution_semaine(df_velo)
+```
+
+19.Depuis une branche feat, ajouter à la fonction calcul_distribution_semaine() un nouveau 
+paramètre filtre qui prend une valeur booléenne (TRUE/FALSE). Si filtre = FALSE, alors le 
+jeu de données en entrée ne sera pas filtré avant calcul. Utiliser le conditionnement if() pour 
+adapter la fonction

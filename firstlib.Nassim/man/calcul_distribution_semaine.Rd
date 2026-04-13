@@ -4,10 +4,12 @@
 \alias{calcul_distribution_semaine}
 \title{Calculer la distribution par semaine}
 \usage{
-calcul_distribution_semaine(trajet)
+calcul_distribution_semaine(trajet, filtre = FALSE)
 }
 \arguments{
 \item{trajet}{Un data.frame contenant une colonne 'Jour de la semaine'.}
+
+\item{filtre}{Logique (TRUE/FALSE). Si TRUE, le jeu de données est filtré des anomalies avant calcul.}
 }
 \value{
 Un data.frame avec le total par jour.
