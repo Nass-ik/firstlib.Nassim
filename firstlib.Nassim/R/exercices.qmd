@@ -122,3 +122,6 @@ plot_distribution_semaine(df_velo)
 paramètre filtre qui prend une valeur booléenne (TRUE/FALSE). Si filtre = FALSE, alors le 
 jeu de données en entrée ne sera pas filtré avant calcul. Utiliser le conditionnement if() pour 
 adapter la fonction
+
+20. Ajuster la documentation et les tests pour prendre en compte les changements apportés par 
+la question précédente

@@ -39,12 +39,18 @@ test_that("filtrer_trajet conserve la bonne boucle", {
   expect_equal(res$`Numéro de boucle`, "881")
 })
 
-test_that("calcul_distribution_semaine regroupe bien par jour", {
-  res <- calcul_distribution_semaine(donnees_test)
-  # Dans donnees_test, on a le jour 1 et le jour 2, il doit donc y avoir 2 lignes de résultat
-  expect_equal(nrow(res), 2)
-  # La somme du jour 2 est de 20
-  expect_equal(res$trajets[res$`Jour de la semaine` == 2], 20)
+test_that("calcul_distribution_semaine gère bien le paramètre filtre", {
+  # 1. Test SANS le filtre (comportement par défaut)
+  res_sans_filtre <- calcul_distribution_semaine(donnees_test, filtre = FALSE)
+
+  # Le jour 1 doit avoir 60 trajets (10 + 50 car on garde l'anomalie)
+  expect_equal(res_sans_filtre$trajets[res_sans_filtre$`Jour de la semaine` == 1], 60)
+
+  # 2. Test AVEC le filtre
+  res_avec_filtre <- calcul_distribution_semaine(donnees_test, filtre = TRUE)
+
+  # Le jour 1 doit avoir 10 trajets (la ligne à 50 a été retirée par filtre_anomalie)
+  expect_equal(res_avec_filtre$trajets[res_avec_filtre$`Jour de la semaine` == 1], 10)
 })
 
 test_that("plot_distribution_semaine genere bien un graphique", {
