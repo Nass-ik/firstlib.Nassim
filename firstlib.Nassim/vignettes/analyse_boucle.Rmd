@@ -1,0 +1,32 @@
+---
+title: "analyse_boucle"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{analyse_boucle}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+## Introduction
+
+Ce tutoriel vous montre comment utiliser le package `firstlib.Nassim` pour analyser la fréquentation d'une boucle de comptage vélo.
+
+## Chargement du package
+
+Commencez par charger la librairie pour avoir accès aux données et aux fonctions :
+
+```{r setup}
+library(firstlib.Nassim)
+```
+
+## Filtrer et visualiser
+
+Nous allons extraire uniquement les données de la boucle numéro "880" à partir du jeu de données `df_velo`, puis générer directement le graphique.
+
+```{r analyse-boucle}
+# 1. On filtre les trajets pour ne garder que la boucle 880
+donnees_boucle_880 <- filtrer_trajet(trajet = df_velo, boucle = c("880"))
+
+# 2. On génère le graphique de distribution
+plot_distribution_semaine(donnees_boucle_880)
+```
+
