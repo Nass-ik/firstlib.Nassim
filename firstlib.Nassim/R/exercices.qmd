@@ -125,3 +125,18 @@ adapter la fonction
 
 20. Ajuster la documentation et les tests pour prendre en compte les changements apportés par 
 la question précédente
+
+21. Appliquer ce changement sur main ou master depuis GitHub. Re-installer le package et 
+vérifier que vous pouvez désormais utiliser ce nouveau paramètre.
+
+```{r}
+# On charge la nouvelle version du package
+library(firstlib.Nassim)
+
+# On teste avec FALSE (doit fonctionner sans erreur)
+calcul_distribution_semaine(df_velo, filtre = FALSE)
+
+# On teste avec TRUE (doit donner des totaux plus petits)
+calcul_distribution_semaine(df_velo, filtre = TRUE)
+```
+
