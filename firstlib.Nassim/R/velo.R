@@ -93,11 +93,17 @@ plot_distribution_semaine <- function(trajet) {
 #'
 #' @description Conserve uniquement les données correspondant aux boucles spécifiées.
 #' @param trajet Un data.frame contenant les données vélos.
-#' @param boucle Un vecteur contenant les numéros de boucle à garder.
+#' @param boucle Un vecteur contenant les numéros de boucle à garder. Si NULL, ne filtre pas.
 #' @return Un data.frame filtré.
 #' @importFrom dplyr filter
 #' @export
-filtrer_trajet <- function(trajet, boucle) {
+filtrer_trajet <- function(trajet, boucle = NULL) {
+  # Si boucle est NULL, on renvoie le tableau intact tout de suite
+  if (is.null(boucle)) {
+    return(trajet)
+  }
+
+  # Sinon, on filtre normalement
   trajet |>
     dplyr::filter(`Numéro de boucle` %in% boucle)
 }

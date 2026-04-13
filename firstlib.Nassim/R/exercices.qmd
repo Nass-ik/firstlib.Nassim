@@ -93,3 +93,7 @@ l’instruction usethis::use_test().
 13. Lancer la commande devtools::test() pour vous assurer que vos tests fonctionnent. Lancer 
 les commandes covr::package_coverage() et covr::report() du package {covr} pour 
 connaitre la couverture de test. Obtenir une couverture minimum de 50%
+
+14. Initiation au Test Driven Developement : Ajouter un test qui s’assure que la fonction 
+filtrer_trajet() renvoie un jeu de données non filtré si le paramètre boucle est NULL. 
+Adapter votre fonction pour que ce nouveau test passe

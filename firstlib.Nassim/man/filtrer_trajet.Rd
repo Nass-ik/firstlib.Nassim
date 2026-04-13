@@ -4,12 +4,12 @@
 \alias{filtrer_trajet}
 \title{Filtrer les trajets par numéro de boucle}
 \usage{
-filtrer_trajet(trajet, boucle)
+filtrer_trajet(trajet, boucle = NULL)
 }
 \arguments{
 \item{trajet}{Un data.frame contenant les données vélos.}
 
-\item{boucle}{Un vecteur contenant les numéros de boucle à garder.}
+\item{boucle}{Un vecteur contenant les numéros de boucle à garder. Si NULL, ne filtre pas.}
 }
 \value{
 Un data.frame filtré.

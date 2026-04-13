@@ -48,7 +48,15 @@ test_that("calcul_distribution_semaine regroupe bien par jour", {
 })
 
 test_that("plot_distribution_semaine genere bien un graphique", {
-  # On teste simplement que la fonction arrive au bout et renvoie bien un objet ggplot
-  res_plot <- plot_distribution_semaine(donnees_test)
+  # On utilise suppressWarnings pour dire à R d'ignorer l'avertissement sur les jours manquants
+  res_plot <- suppressWarnings(plot_distribution_semaine(donnees_test))
   expect_true(inherits(res_plot, "ggplot"))
+})
+
+test_that("filtrer_trajet ne filtre rien si boucle est NULL", {
+  # On appelle la fonction avec boucle = NULL
+  res <- filtrer_trajet(donnees_test, boucle = NULL)
+
+  # Le résultat doit avoir exactement le même nombre de lignes que le tableau de départ
+  expect_equal(nrow(res), nrow(donnees_test))
 })
