@@ -83,4 +83,8 @@ Une fois la fonction implémentée, récupérer les modifications sur master (ou
 suivi d’un merge depuis la remote sur GitHub. Penser à pull depuis master avant de poursuivre 
 vos modifications.
 
-
+Tests
+12. En utilisant testthat, écrivez des tests unitaires toutes les fonctions de votre package. Essayez 
+de tester soit la validité des arguments fournis en entrée, soit la pertinence des résultats 
+pour un jeu de données fixé en entrée. Vous pourrez créer les fichiers de tests en utilisant 
+l’instruction usethis::use_test().
