@@ -88,3 +88,8 @@ Tests
 de tester soit la validité des arguments fournis en entrée, soit la pertinence des résultats 
 pour un jeu de données fixé en entrée. Vous pourrez créer les fichiers de tests en utilisant 
 l’instruction usethis::use_test().
+
+
+13. Lancer la commande devtools::test() pour vous assurer que vos tests fonctionnent. Lancer 
+les commandes covr::package_coverage() et covr::report() du package {covr} pour 
+connaitre la couverture de test. Obtenir une couverture minimum de 50%

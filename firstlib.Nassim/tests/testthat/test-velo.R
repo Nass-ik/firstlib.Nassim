@@ -38,3 +38,17 @@ test_that("filtrer_trajet conserve la bonne boucle", {
   expect_equal(nrow(res), 1)
   expect_equal(res$`Numéro de boucle`, "881")
 })
+
+test_that("calcul_distribution_semaine regroupe bien par jour", {
+  res <- calcul_distribution_semaine(donnees_test)
+  # Dans donnees_test, on a le jour 1 et le jour 2, il doit donc y avoir 2 lignes de résultat
+  expect_equal(nrow(res), 2)
+  # La somme du jour 2 est de 20
+  expect_equal(res$trajets[res$`Jour de la semaine` == 2], 20)
+})
+
+test_that("plot_distribution_semaine genere bien un graphique", {
+  # On teste simplement que la fonction arrive au bout et renvoie bien un objet ggplot
+  res_plot <- plot_distribution_semaine(donnees_test)
+  expect_true(inherits(res_plot, "ggplot"))
+})
